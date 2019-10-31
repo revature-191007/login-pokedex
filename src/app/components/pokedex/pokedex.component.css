@@ -1,0 +1,12 @@
+#container-section {
+    background: #FF4200;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 30px;
+    margin: 0;
+    font-family: cursive;
+}
