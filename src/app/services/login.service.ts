@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 /* Note that services will generally have this decorator */
 @Injectable({
@@ -22,7 +23,7 @@ export class LoginService {
 
   // Assuming there is a service called 'Router' how
   // would it be injected?
-  constructor(private router: Router) { }
+  constructor(private router: Router, private httpClient: HttpClient) { }
 
   login(credentials: {email: string, password: string}) {
     const valid = this.validCredentials.some(obj => {
@@ -40,4 +41,15 @@ export class LoginService {
 
   }
 
+  loginHttp(credentials: {email: string, password: string}) {
+    const loginCredentials = {
+      username: credentials.email,
+      password: credentials.password
+    };
+    const url = 'http://localhost:8080/second-webapp/session';
+    this.httpClient.post(url, loginCredentials)
+        .subscribe((data) => {
+          console.log(data);
+        });
+  }
 }

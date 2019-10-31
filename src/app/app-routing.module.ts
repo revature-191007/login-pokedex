@@ -3,13 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from 'src/app/components/login/login.component';
 import { ProfileComponent } from 'src/app/components/profile/profile.component';
 import { PokedexComponent } from 'src/app/components/pokedex/pokedex.component';
+import { LoginHttpComponent } from 'src/app/components/login-with-http/login.component';
 
 const routes: Routes = [{
   path: 'login',
   component: LoginComponent
 }, {
   path: '',
-  redirectTo: '/login',
+  redirectTo: '/http-login',
   pathMatch: 'full'
 }, {
   path: 'profile',
@@ -17,6 +18,9 @@ const routes: Routes = [{
 }, {
   path: 'pokedex',
   component: PokedexComponent
+}, {
+  path: 'http-login',
+  component: LoginHttpComponent
 }];
 
 @NgModule({

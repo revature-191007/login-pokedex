@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { PokedexService } from 'src/app/services/pokedex.service';
 
 @Component({
   selector: 'app-poke-history',
@@ -8,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class PokeHistoryComponent implements OnInit {
 
   pokeHistory: string[] = [];
+  pokeSubscription: Subscription;
 
-  constructor() { }
+  constructor(private pokedexService: PokedexService) { }
 
   ngOnInit() {
+    this.pokeSubscription = this.pokedexService
+      .$pokeData.subscribe(data =>
+        this.pokeHistory.push(data.sprites.front_default));
   }
 
 }

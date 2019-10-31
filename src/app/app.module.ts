@@ -14,6 +14,7 @@ import { PokeImgComponent } from './components/poke-img/poke-img.component';
 import { PokeTitleComponent } from './components/poke-title/poke-title.component';
 import { PokeHistoryComponent } from './components/poke-history/poke-history.component';
 import { PokedexService } from 'src/app/services/pokedex.service';
+import { LoginHttpComponent } from 'src/app/components/login-with-http/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PokedexService } from 'src/app/services/pokedex.service';
     PokeInputComponent,
     PokeImgComponent,
     PokeTitleComponent,
-    PokeHistoryComponent
+    PokeHistoryComponent,
+    LoginHttpComponent
   ],
   imports: [
     BrowserModule,
