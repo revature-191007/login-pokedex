@@ -25,7 +25,7 @@ export class LoginService {
   // would it be injected?
   constructor(private router: Router, private httpClient: HttpClient) { }
 
-  login(credentials: {email: string, password: string}) {
+  async login(credentials: {email: string, password: string}) {
     const valid = this.validCredentials.some(obj => {
       return obj.email === credentials.email &&
           obj.password === credentials.password;
@@ -33,7 +33,7 @@ export class LoginService {
 
     if (valid) {
       this.currentlyLoggedIn = true;
-      this.router.navigateByUrl('/profile');
+      await this.router.navigateByUrl('/profile');
     } else {
       // bad credentials
       return false;
