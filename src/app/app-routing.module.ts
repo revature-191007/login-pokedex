@@ -5,7 +5,7 @@ import { ProfileComponent } from 'src/app/components/profile/profile.component';
 import { PokedexComponent } from 'src/app/components/pokedex/pokedex.component';
 import { LoginHttpComponent } from 'src/app/components/login-with-http/login.component';
 
-const routes: Routes = [{
+export const routes: Routes = [{
   path: 'login',
   component: LoginComponent
 }, {
